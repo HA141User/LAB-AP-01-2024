@@ -8,7 +8,7 @@ def acronym(string):
     except:
         print("Peringatan Kesalahan")
 
-nkri = "Negara Kesatuan Republik indonesia"
+nkri = "Negara Kesatuan Republik esia"
 acronym(nkri)
 
 

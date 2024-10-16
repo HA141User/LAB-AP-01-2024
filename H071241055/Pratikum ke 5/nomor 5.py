@@ -1,27 +1,22 @@
-def shiftAlfabet(string,step):
-    kata = []
-    alfabet = "abcdefghijklmnopqrstuvwxyz"
-    listString = list(string)
-    # print(listString)
-    for i in listString:
-        if i in alfabet:
-            indexAlfa = alfabet.find(i)
-            if indexAlfa == len(alfabet) - 1:
-                result = 
-            kata.append(result)
-            # print(result)
+def geser_teks(teks, pergeseran):
+    teks_enkripsi = ""
+
+    for karakter in teks:
+        if karakter.islower():
+            karakter_enkripsi = chr((ord(karakter) - ord('a') + pergeseran) % 26 + ord('a'))
+            teks_enkripsi += karakter_enkripsi
+        elif karakter.isupper():
+            karakter_enkripsi = chr((ord(karakter) - ord('A') + pergeseran) % 26 + ord('A'))
+            teks_enkripsi += karakter_enkripsi
         else:
-            kata.append(i)
-    print("".join(kata))
+            teks_enkripsi += karakter
 
+    return teks_enkripsi
 
-shiftAlfabet("1234567890a",4)
-
-# a = "ayam"
-# b = "y"
-
-# c = a.find(b)
-# print(c)
+input_teks = input("Masukkan string: ")
+pergeseran_jumlah = int(input("Masukkan jumlah pergeseran (bilangan bulat positif): "))
+hasil = geser_teks(input_teks, pergeseran_jumlah)
+print("Hasil enkripsi:", hasil)
 
 
 
